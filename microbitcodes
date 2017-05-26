@@ -79,5 +79,28 @@ while True:
     sleep(DELAY)
     frame += 1
     
+    from microbit import*
+
+
+
+
+while True:
+    reading = accelerometer.get.x()
+    if reading>20:
+        display.show("L")
+    elif reading<-20:
+        display.show("R")
+    else:
+        display.show("-")
     
-    
+
+
+
+from microbit import*
+
+compass.calibrate()
+while True:
+    sleep(100)
+    needle = ((15-compass.heading())//30)%12
+    ##compass.heading() return an integer betwwen 0 - 360 to show the degree
+    display.show(Image.ALL_CLOCKS[needle])
