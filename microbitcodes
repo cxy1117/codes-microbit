@@ -104,3 +104,33 @@ while True:
     needle = ((15-compass.heading())//30)%12
     ##compass.heading() return an integer betwwen 0 - 360 to show the degree
     display.show(Image.ALL_CLOCKS[needle])
+    
+    
+    
+    
+    from microbit import*
+while True
+    
+    reading = pin0.read_analog() /204
+   if reading> 4.0:
+       pos = 4
+   elif reading > 3.0:
+       pos = 3
+   elif reading > 2.0:
+       pos = 2
+   elif reading > 1.0:
+       pos = 1
+   else:
+       pos = 0
+#this is equals to pos = reading //1
+       
+   column = ['0'for i in range (5)]
+   column[pos] = '9'
+   img = ((''.join(column)+":")*5)[0:-1]
+   #-1 refers to the last item in the array
+   #-1 iterates all the elements in the array except the last element
+   img = Image(img)
+   # convert variable type
+   display.show(img)
+   sleep(200)
+    
