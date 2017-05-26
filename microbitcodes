@@ -134,3 +134,18 @@ while True
    display.show(img)
    sleep(200)
     
+
+
+
+
+rom microbit import *
+frame = 0
+while True:
+    if frame % 2 ==0:
+        display,show(str(frame))
+        pin0.write_digital(0)
+    else:
+        pin0.write_digital(1)
+        display.clear()
+    frame+=1
+    sleep(2000)
