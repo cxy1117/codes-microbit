@@ -1,0 +1,83 @@
+boolean = button_a.is_pressed()
+   if boolean:
+       display.show(Image.MEH)
+else:
+    display.show(Image:FABULOUS)
+
+ presses = button_a.gets_presses()
+    display.show(str(presses))
+
+
+
+
+while True:
+   boolean = button_a.is_pressed()
+   boolean2 = button_b.is_pressed()
+   if boolean and boolean2:
+       display.show(Image.MEH)
+else:
+    display.show(Image:FABULOUS)
+    
+    from microbit import *
+import random
+
+
+display.scroll("Get ready...")
+DELAY = 20 #duration of one frame
+FRAMES_PER_WALL_SHIFT = 20 # number of frames before the pipes shift
+   #to the left by 0ne pixel
+FRAMES_PER_NEW_WALL = 100 #100 = 20*5
+FRAMES_PER_SCORE = 50
+   # global variable
+y = 50 #coordinate of the bird, between 0-99
+speed = 0 #change of y coordinate for one frame
+score = 0
+frame = 0
+   
+   
+def make_pipe():
+     pipe = Image("00003:00003:00003:00003:00003")
+     gap = random.randint(0,3)
+     pipe.set_pixel(4, gap, 0)
+     pipe.set_pixel(4, gap+1, 0)
+     return pipe
+     
+pipe = make_pipe()
+
+
+while True:
+    display.show(pipe)
+    if button_a.is_pressed():
+        speed = -8
+    
+    
+    speed += 1
+    if speed > 2:
+      speed =2
+      
+    y+= speed
+    if y >99:
+       y=99
+    elif y<0:
+       y=0
+     
+    bird_y = int(y/20)
+    display.set_pixel( 1, bird_y, 9)
+     
+    if pipe.get_pixel(1, bird_y,) !=0:
+        display.show(Image.SAD)
+        sleep(500)
+        display.scroll("Score...")
+    if frame % FRAMES_PER_WALL_SHIFT == 0:
+        pipe = pipe.shift_left(1)
+    
+    if frame % FRAMES_PER_NEW_WALL == 0:
+        pipe= make_pipe()
+    if frame % FRAMES_PER_SCORE == 0:
+        score += 1 
+    
+    sleep(DELAY)
+    frame += 1
+    
+    
+    
