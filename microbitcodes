@@ -21,6 +21,7 @@ else:
     from microbit import *
 import random
 
+>>>>>>>>>>>>>>>>>>FLAPPYBIRD.CODE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 display.scroll("Get ready...")
 DELAY = 20 #duration of one frame
