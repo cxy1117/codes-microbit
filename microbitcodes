@@ -79,7 +79,7 @@ while True:
     
     sleep(DELAY)
     frame += 1
-    
+    >>>>>>>>>>>>>>>>>>>>>>>>>>>ENDFLAPPYBIRDCODE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     from microbit import*
 
 
@@ -150,3 +150,47 @@ while True:
         display.clear()
     frame+=1
     sleep(2000)
+
+
+>>>>>>>>>>>>>>>>>>>DICE>>>>>>>>>>>>>>>>>>>
+from microbit import *
+import random
+
+dice1 = Image("00000:"
+              "00000:"
+              "00900:"
+              "00000:"
+              "00000:")
+dice2 = Image("90000:"
+              "00000:"
+              "00000:"
+              "00000"
+              "00009:")
+dice3 = Image("90000:"
+              "00000:"
+              "00900:"
+              "00000:"
+              "00009:")
+dice4 = Image("90009:"
+              "00000:"
+              "00000:"
+              "00000:"
+              "90009:")
+dice5 = Image("90009:"
+              "00000:"
+              "00900:"
+              "00000:"
+              "90009:")
+dice6 = Image("90009:"
+              "00000:"
+              "90009:"
+              "00000:"
+              "90009:")
+dice = [dice1,dice2,dice3,dice4,dice5,dice6]
+              
+while True:
+  
+   if button_a.is_pressed():
+    display.show(random.choice(dice))
+    sleep(500)
+    >>>>>>>>>>>>>>>>>>>>>>>>ENDDICE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
