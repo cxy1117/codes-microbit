@@ -209,3 +209,23 @@ while True:
             display.show("-")
             
      >>>>>>>>>>>>>>>>>>>>>END>>>>>>>>>>>>>>>>>>>
+     >>>>>>>>>>>>>>>>ACCEL>>>>>>>>>>>>>>>>>>.>.
+     from microbit import *
+
+
+while True:
+        readingX = accelerometer.get_x()
+        readingY = accelerometer.get_y()
+        
+        if readingX >= 200:
+            display.show("R")
+        elif readingX <= -200:
+            display.show("L")
+        elif readingY <= -200:
+            display.show("U")
+        elif readingY >= 200:
+            display.show("D")
+        else:
+            display.show(Image.SURPRISED)
+           
+>>>>>>>>>>>>>>>>>>>>>>>>>>>END>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
