@@ -229,3 +229,17 @@ while True:
             display.show(Image.SURPRISED)
            
 >>>>>>>>>>>>>>>>>>>>>>>>>>>END>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+from microbit import *
+
+
+while True:
+    gesture = accelerometer.current_gesture()
+    if gesture == "shake":
+        display.show(Image.HAPPY)
+    else:
+        display.show(Image.SAD)
+        
+sleep(1000)
+>>>>>>>>>>>>>>>>>>>>END>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
