@@ -194,3 +194,18 @@ while True:
     display.show(random.choice(dice))
     sleep(500)
     >>>>>>>>>>>>>>>>>>>>>>>>ENDDICE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>ACCELEROMETER>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+from microbit import *
+
+
+while True:
+        readingX = accelerometer.get_x()
+        
+        if readingX >= 200 :
+            display.scroll("Right")
+        elif readingX >= -200 :
+            display.scroll("Left")
+        else :
+            display.show("-")
+            
+     >>>>>>>>>>>>>>>>>>>>>END>>>>>>>>>>>>>>>>>>>
